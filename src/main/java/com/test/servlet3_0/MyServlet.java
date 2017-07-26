@@ -7,12 +7,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Logger;
 
 /**
  * Created by venya on 24.07.17.
  */
 @WebServlet("/s")
 public class MyServlet extends HttpServlet {
+    private static Logger log = Logger.getLogger(MyServlet.class.getName());
+    public MyServlet() {
+        super();
+        log.info("Registered: [MyServlet]");
+    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
