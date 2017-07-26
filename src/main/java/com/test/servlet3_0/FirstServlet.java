@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(description = "My First Servlet", urlPatterns = { "/FirstServlet" , "/FirstServlet.do"}, initParams = {@WebInitParam(name="id",value="1"),@WebInitParam(name="name",value="pankaj")})
 public class FirstServlet extends HttpServlet {
-    private static Logger log = Logger.getLogger(MyServlet.class.getName());
+    private static Logger log = Logger.getLogger(TestServlet.class.getName());
     private static final long serialVersionUID = 1L;
     public static final String HTML_START="<html><body>";
     public static final String HTML_END="</body></html>";

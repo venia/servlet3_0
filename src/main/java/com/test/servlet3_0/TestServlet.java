@@ -13,11 +13,11 @@ import java.util.logging.Logger;
  * Created by venya on 24.07.17.
  */
 @WebServlet("/s")
-public class MyServlet extends HttpServlet {
-    private static Logger log = Logger.getLogger(MyServlet.class.getName());
-    public MyServlet() {
+public class TestServlet extends HttpServlet {
+    private static Logger log = Logger.getLogger(TestServlet.class.getName());
+    public TestServlet() {
         super();
-        log.info("Registered: [MyServlet]");
+        log.info("Registered: [TestServlet]");
     }
 
     @Override
