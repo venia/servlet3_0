@@ -1,10 +1,9 @@
 package com.test.servlet3_0;
 
-import lombok.extern.slf4j.Slf4j;
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
@@ -16,9 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class FirstServlet
  */
-@Slf4j
 @WebServlet(description = "My First Servlet", urlPatterns = { "/FirstServlet" , "/FirstServlet.do"}, initParams = {@WebInitParam(name="id",value="1"),@WebInitParam(name="name",value="pankaj")})
 public class FirstServlet extends HttpServlet {
+    private static Logger log = Logger.getLogger(MyServlet.class.getName());
     private static final long serialVersionUID = 1L;
     public static final String HTML_START="<html><body>";
     public static final String HTML_END="</body></html>";
@@ -28,7 +27,7 @@ public class FirstServlet extends HttpServlet {
      */
     public FirstServlet() {
         super();
-        log("registered: [FirstServlet]");
+        log.info("Registered: [FirstServlet]");
     }
 
     /**

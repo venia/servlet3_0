@@ -1,7 +1,5 @@
 package com.test.servlet3_0;
 
-import lombok.extern.slf4j.Slf4j;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,16 +7,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Logger;
 
 /**
  * Created by venya on 24.07.17.
  */
 @WebServlet("/s")
-@Slf4j
 public class MyServlet extends HttpServlet {
+    private static Logger log = Logger.getLogger(MyServlet.class.getName());
     public MyServlet() {
         super();
-        log("Registered: [MyServlet]");
+        log.info("Registered: [MyServlet]");
     }
 
     @Override
