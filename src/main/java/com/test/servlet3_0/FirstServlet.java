@@ -3,8 +3,10 @@ package com.test.servlet3_0;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
+import java.util.Enumeration;
 import java.util.logging.Logger;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
@@ -29,6 +31,30 @@ public class FirstServlet extends HttpServlet {
         super();
         log.info("Registered: [FirstServlet]");
     }
+
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config);
+        System.out.println("==================[ServletConfig]===================");
+        if (this.getServletConfig() == null) {
+            System.out.println("NULL = YES");
+        } else {
+            System.out.println("NULL = NO");
+        }
+        System.out.println("==================[ServletConfig]===================");
+        Enumeration names = this.getServletConfig().getInitParameterNames();
+        while (names.hasMoreElements()) {
+            String name = (String)names.nextElement();
+            System.out.println("=====================================");
+            System.out.println("Name init param:" + name);
+            System.out.println("=====================================");
+        }
+        String id = this.getServletConfig().getInitParameter("id");
+        String name = this.getServletConfig().getInitParameter("name");
+        log.info(String.format("Init param ID: %s", id));
+        log.info(String.format("Init param NAME: %s", name));
+    }
+
+
 
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
